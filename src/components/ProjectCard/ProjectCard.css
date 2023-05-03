@@ -1,0 +1,26 @@
+.slick-next:before{
+  font-size : 40px;
+  
+}
+.slick-prev:before{
+  font-size : 40px;
+}
+.slick-arrow{
+  width : 50px;
+  height : 40px;
+}
+.slick-list{
+  height: 100%;
+  margin : 0 40px;
+}
+
+.slick-slider{
+  width : 95%;
+  height: 500px;
+@media screen and (max-width: 768px) {
+    height: 150px;
+}
+}
+.slick-track{
+  height : 100%;
+}
