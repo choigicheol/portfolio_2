@@ -1,3 +1,18 @@
+@font-face {
+  font-family: Oswald;
+  src: url('./assets/fonts/Oswald-Bold.woff2');
+  font-weight: 700;
+  font-display: block;
+  
+}
+
+@font-face {
+  font-family: Oswald;
+  src: url('./assets/fonts/Oswald-Regular.woff2');
+  font-weight: 400;
+  font-display: block;
+}
+
 .progress-bar {
   position: fixed;
   top: 0;

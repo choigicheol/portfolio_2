@@ -8,7 +8,7 @@ const size = {
 const theme = {
   backgroundColor: "rgba(38, 37, 40, 0.99)",
   fontColor: "#c8c8c8",
-  fontFamily: "Oswald, sans-serif",
+  fontFamily: "Oswald",
   mobile: `(max-width: ${size.mobile})`,
   desktop: `(min-width: ${size.desktop})`,
 };

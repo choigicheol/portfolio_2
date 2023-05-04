@@ -2,9 +2,6 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import ProjectCard from "../ProjectCard/ProjectCard";
 import { data } from "../../data/data";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Bounce from "react-reveal/Bounce";
 
 function Project() {
   const [projects, setProjects] = useState(data);
