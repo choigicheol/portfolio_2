@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { SkillContainer } from "./Skill.style";
 import SetSkills from "../SetSkills/SetSkills";
 

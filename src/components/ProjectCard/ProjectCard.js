@@ -3,7 +3,6 @@ import styled from "styled-components";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import ScrollArrow from "../ScrollArrow/ScrollArrow";
 import "./ProjectCard.css";
 import ProjectDetail from "../ProjectDetail/ProjectDetail";
 
@@ -27,6 +26,11 @@ function ProjectCard({
     slidesToShow: 1,
     slidesToScroll: 1,
   };
+
+  // const bottomRef = useRef(null);
+  //   function handleClick() {
+  //     bottomRef.current.scrollIntoView({ behavior: "smooth" });
+  //   }
   return (
     <Container
       isDetailView={isDetailView}
@@ -47,47 +51,47 @@ function ProjectCard({
               padding: "20px 0",
             }}
           >
+            <div
+              style={{
+                display: "flex",
+                width: "100%",
+                justifyContent: "flex-end",
+              }}
+            >
+              <CloseButton onClick={(e) => handleCloseDetailView(e)}>
+                <img
+                  src="./images/closeIcon.png"
+                  style={{ height: "30px" }}
+                  alt="close"
+                />
+              </CloseButton>
+            </div>
+            {/* project 설명 */}
+            <ProjectDetail props={detail} />
+
             {/* carousel */}
             <Slider {...settings}>
-              {screens.map((screen) => (
-                <SlideImage url={screen} />
+              {screens.map((screen, idx) => (
+                <SlideImage key={idx} url={screen} />
               ))}
             </Slider>
             <div
               style={{
-                display: "flex",
-                width: "100%",
-                justifyContent: "flex-end",
-                paddingTop: "30px",
-              }}
-            >
-              <ScrollArrow />
-            </div>
-            <ProjectDetail props={detail} />
-            <div
-              style={{
+                marginTop: "20px",
                 display: "flex",
                 width: "100%",
                 justifyContent: "flex-end",
               }}
             >
-              <span
+              <CloseButton
                 onClick={(e) => {
                   handleCloseDetailView(e);
                   setIsOver(false);
                 }}
-                style={{
-                  fontSize: "22px",
-                  letterSpacing: "2px",
-                  fontWeight: "bold",
-                  padding: "10px",
-                  cursor: "pointer",
-                }}
               >
                 CLOSE
-              </span>
+              </CloseButton>
             </div>
-            {/* project 설명 */}
           </div>
         </DetailView>
       ) : (
@@ -100,8 +104,12 @@ function ProjectCard({
                 {title}
               </div>
               <div>
-                {skills.map((skill) => {
-                  return <span style={{ marginRight: "5px" }}>{skill}</span>;
+                {skills.map((skill, idx) => {
+                  return (
+                    <span key={idx} style={{ marginRight: "5px" }}>
+                      {skill}
+                    </span>
+                  );
                 })}
               </div>
             </ExplainArea>
@@ -129,6 +137,7 @@ export const Container = styled.div`
   cursor: pointer;
   border-radius: 5px;
   box-sizing: border-box;
+  overflow: ${(props) => (props.isDetailView ? "hidden" : "none")};
 `;
 
 export const ImgDiv = styled.div`
@@ -176,4 +185,12 @@ export const SlideImage = styled.div`
   background-size: contain;
   background-repeat: no-repeat;
   background-image: ${(props) => `url(${props.url})`};
+`;
+
+export const CloseButton = styled.span`
+  font-size: 22px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  padding-right: 10px;
+  cursor: pointer;
 `;

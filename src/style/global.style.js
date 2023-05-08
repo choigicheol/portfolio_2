@@ -6,7 +6,7 @@ const size = {
 };
 
 const theme = {
-  backgroundColor: "rgba(38, 37, 40, 0.99)",
+  backgroundColor: "rgba(38, 37, 40, 1)",
   fontColor: "#c8c8c8",
   fontFamily: "Oswald",
   mobile: `(max-width: ${size.mobile})`,
@@ -16,16 +16,15 @@ const theme = {
 export default theme;
 
 export const Pointer = styled.div`
-  position: absolute;
+  position: fixed;
   background-color: rgb(0, 255, 255, 0.9);
   border-radius: 50%;
   width: 50px;
   height: 50px;
   left: -22px;
   top: -22px;
-  /* transition: all 0.1s ease-out; */
+  transition: all 0.5s ease-out;
   mix-blend-mode: difference;
-  transition: all 0.2s ease;
   z-index: 99999;
   pointer-events: none;
 `;

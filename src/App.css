@@ -21,4 +21,5 @@
   height: 10px;
   background: rgba(255, 139, 118, 0.737);
   transform-origin: 0%;
+  z-index : 999999;
 }

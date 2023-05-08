@@ -4,7 +4,7 @@ import { FlexBox } from "../../style/global.style";
 import Bounce from "react-reveal/Bounce";
 
 const Container = styled(FlexBox)`
-  height: 40vh;
+  height: 200px;
   justify-content: center;
   background: ${(props) => props.theme.backgroundColor};
   color: ${(props) => props.theme.fontColor};
@@ -52,12 +52,12 @@ const contacts = [
   },
   {
     path: "./images/github.png",
-    content: "",
+    content: "github",
     href: "https://github.com/choigicheol",
   },
   {
     path: "./images/velog.svg",
-    content: "",
+    content: "blog",
     href: "https://velog.io/@g_c0916",
   },
 ];
@@ -65,8 +65,8 @@ const contacts = [
 function Contact() {
   return (
     <Container>
-      {contacts.map((contact) => (
-        <ContactBox>
+      {contacts.map((contact, idx) => (
+        <ContactBox key={idx}>
           <Bounce>
             <a href={contact.href} target="_blank">
               <ImageDiv path={contact.path} />

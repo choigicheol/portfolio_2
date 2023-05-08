@@ -5,8 +5,8 @@ import Bounce from "react-reveal/Bounce";
 function SetSkills({ images }) {
   return (
     <SetSkillsContainer>
-      {images.map((img) => (
-        <Bounce>
+      {images.map((img, idx) => (
+        <Bounce key={idx}>
           <ImageWrapper>
             <Image src={img} />
           </ImageWrapper>

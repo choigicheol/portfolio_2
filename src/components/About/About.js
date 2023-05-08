@@ -21,6 +21,7 @@ function About() {
   ];
 
   useEffect(() => {
+    console.log("render");
     setIsMount(true);
     setTimeout(() => {
       setIsShowAbout(true);
@@ -35,21 +36,20 @@ function About() {
         </div>
         <Bar isMount={isMount} />
         <div>
-          {aboutText[1].map((word, idx) => (
-            <AboutText key={idx}>{word}</AboutText>
-          ))}
+          <AboutText>{"END"}</AboutText>
         </div>
       </Wrapper>
       <Wrapper2>
         <div>
-          {aboutText[2].map((word, idx) => (
-            <AboutText key={idx}>{word}</AboutText>
-          ))}
+          <AboutText>{"DEVELOPER"}</AboutText>
         </div>
         {isShowAbout && (
           <Fade>
             <AboutMe>
-              <p>안녕하세요 Front-end 개발자 최기철입니다. </p>
+              <p>
+                안녕하세요 재밌는 기능 만드는걸 좋아하고 인간관계를 중요시하는
+                Front-end 개발자 최기철입니다.
+              </p>
               <ScrollArrow />
             </AboutMe>
           </Fade>

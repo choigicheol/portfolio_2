@@ -1,62 +1,65 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState } from "react";
 import "./App.css";
 import { ThemeProvider } from "styled-components";
-import theme, { Pointer } from "./style/global.style";
-import { motion, useScroll } from "framer-motion";
+import theme from "./style/global.style";
 import About from "./components/About/About";
 import Skill from "./components/Skill/Skill";
 import Rail from "./components/Rail/Rail";
 import Project from "./components/Project/Project";
 import Contact from "./components/Contact/Contact";
+import { railSkill, railProject, railContact } from "./data/data";
+import { motion, useScroll } from "framer-motion";
+import CursorCircle from "./components/CursorCircle/CursorCircle";
+import styled from "styled-components";
+import { throttle } from "lodash";
 
 function App() {
   const { scrollYProgress } = useScroll();
-  const [xy, setXY] = useState({ x: 0, y: 0 });
-  const [scrollY, setScrollY] = useState(0);
-
-  const xyHandler = (e) => {
-    const mouseX = e.pageX;
-    const mouseY = e.pageY;
-    setXY({ x: mouseX, y: mouseY });
-  };
-
-  const handleScroll = () => {
-    setScrollY(window.scrollY);
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    // const timer = setInterval(() => {
-    // }, 100);
-    // return () => {
-    //   clearInterval(timer);
-    //   window.removeEventListener("scroll", handleScroll);
-    // };
-  }, []);
-
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const handleMouseMove = throttle((e) => {
+    setPosition({ x: e.clientX, y: e.clientY });
+  }, 100);
   return (
     <ThemeProvider theme={theme}>
-      <div onMouseMove={(e) => xyHandler(e)}>
+      <div
+        onMouseMove={(e) => handleMouseMove(e)}
+        style={{
+          position: "relative",
+          width: "100%",
+          height: "100%",
+        }}
+      >
         <motion.div
           className="progress-bar"
           style={{ scaleX: scrollYProgress }}
         />
+
         <About />
-        <Rail scrollY={scrollY} dir={"forward"} title={"SKILL"} page={0} />
+        <Rail dir={"forward"} words={railSkill} page={0} />
         <Skill />
-        <Rail scrollY={scrollY} dir={"reverse"} title={"PROJECT"} page={1} />
+        <Rail dir={"reverse"} words={railProject} page={1} />
         <Project />
-        <Rail scrollY={scrollY} dir={"forward"} title={"CONTACT"} page={2} />
+        <Rail dir={"forward"} words={railContact} page={2} />
         <Contact />
+        <CursorCircle x={position.x} y={position.y} />
+        {/* <Pointer x={position.x} y={position.y} /> */}
       </div>
-      <Pointer
-        style={{
-          WebkitTransform: `translate3d(${xy.x - 25}px, ${xy.y - 25}px, 0)`,
-          transform: `translate(${xy.x}px, ${xy.y}px)`,
-        }}
-      />
     </ThemeProvider>
   );
 }
 
 export default App;
+
+export const Pointer = styled.div`
+  position: fixed;
+  background-color: rgb(0, 255, 255, 0.9);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  left: ${(props) => props.x - 22}px;
+  top: ${(props) => props.y - 22}px;
+  transition: all 0.5s ease-out;
+  mix-blend-mode: difference;
+  /* z-index: 99999; */
+  pointer-events: none;
+`;

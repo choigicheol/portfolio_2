@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
 export const AboutContainer = styled.div`
   display: flex;
@@ -18,7 +18,7 @@ export const Wrapper = styled.div`
   display: flex;
   width: 100%;
   align-items: center;
-  transform: justify-content 0.1s easy;
+
   @media screen and (max-width: 600px) {
     flex-direction: column;
   }
@@ -28,7 +28,6 @@ export const Wrapper2 = styled.div`
   display: flex;
   width: 100%;
   align-items: center;
-  transform: justify-content 0.1s easy;
 
   @media screen and (max-width: 1100px) {
     flex-direction: column;
@@ -39,7 +38,9 @@ export const AboutText = styled.span`
   font-size: 300px;
   letter-spacing: -7px;
   font-weight: bold;
+  cursor: default;
   font-family: "Oswald", sans-serif;
+  text-shadow: 5px 5px 2px #000000;
   @media screen and (max-width: 1550px) {
     font-size: 250px;
   }
@@ -66,7 +67,8 @@ export const Bar = styled.div`
   width: ${(props) => (props.isMount ? "100%" : "0%")};
   background: ${(props) => props.theme.fontColor};
   margin: 0 20px;
-  transition: width 3s;
+  transition: width 6s ease-out;
+  box-shadow: 5px 5px 2px #000000;
   @media screen and (max-width: 1550px) {
     height: 46px;
   }

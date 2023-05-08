@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import ProjectCard from "../ProjectCard/ProjectCard";
 import { data } from "../../data/data";
@@ -6,14 +6,6 @@ import { data } from "../../data/data";
 function Project() {
   const [projects, setProjects] = useState(data);
   const [isDetailView, setIsDetailView] = useState(false);
-  const [selectProjectId, setSelectProjectId] = useState(null);
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  };
 
   const handleDetailView = (id) => {
     setIsDetailView(true);
@@ -21,14 +13,6 @@ function Project() {
     copy[id].isSelect = true;
     setProjects(copy);
   };
-
-  useEffect(() => {
-    if (selectProjectId !== null) {
-      setProjects(data.filter((data) => data.id === selectProjectId));
-    } else {
-      setProjects(data);
-    }
-  }, [selectProjectId]);
 
   const handleCloseDetailView = (e) => {
     e.stopPropagation();
@@ -39,6 +23,10 @@ function Project() {
       setProjects(copy);
     }
   };
+
+  useEffect(() => {
+    console.log("renderProject");
+  }, []);
 
   return (
     <Container isDetailView={isDetailView}>
@@ -80,6 +68,7 @@ export const Container = styled.div`
   background: ${(props) => props.theme.backgroundColor};
   color: ${(props) => props.theme.fontColor};
   padding: 0 80px;
+  /* pointer-events: auto; */
   @media ${(props) => props.theme.desktop} {
   }
   @media ${(props) => props.theme.mobile} {

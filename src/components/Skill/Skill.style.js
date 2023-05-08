@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { FlexBox } from "../../style/global.style";
 
 export const SkillContainer = styled.div`
   display: flex;
