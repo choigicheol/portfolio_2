@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
-import styled from "styled-components";
+import React, { useState } from "react";
 import ProjectCard from "../ProjectCard/ProjectCard";
 import { data } from "../../data/data";
+import { ProjectContainer } from "./Project.style";
+import { Container, LeftTitle } from "../../style/global.style";
 
-function Project() {
+const Project = React.memo(function Project() {
   const [projects, setProjects] = useState(data);
   const [isDetailView, setIsDetailView] = useState(false);
 
@@ -24,56 +25,34 @@ function Project() {
     }
   };
 
-  useEffect(() => {
-    console.log("renderProject");
-  }, []);
-
   return (
-    <Container isDetailView={isDetailView}>
-      {projects.map((project, idx) => {
-        const { title, skills, mainScreen, screens, id, isSelect, detail } =
-          project;
-        return (
-          <ProjectCard
-            screens={screens}
-            key={idx}
-            id={id}
-            title={title}
-            skills={skills}
-            mainScreen={mainScreen}
-            handleDetailView={handleDetailView}
-            isSelect={isSelect}
-            isDetailView={isDetailView}
-            detail={detail}
-            handleCloseDetailView={handleCloseDetailView}
-          />
-        );
-      })}
+    <Container>
+      <LeftTitle>
+        <span>{"PROJECT"}</span>
+      </LeftTitle>
+      <ProjectContainer isDetailView={isDetailView}>
+        {projects.map((project, idx) => {
+          const { title, skills, mainScreen, screens, id, isSelect, detail } =
+            project;
+          return (
+            <ProjectCard
+              screens={screens}
+              key={idx}
+              id={id}
+              title={title}
+              skills={skills}
+              mainScreen={mainScreen}
+              handleDetailView={handleDetailView}
+              isSelect={isSelect}
+              isDetailView={isDetailView}
+              detail={detail}
+              handleCloseDetailView={handleCloseDetailView}
+            />
+          );
+        })}
+      </ProjectContainer>
     </Container>
   );
-}
+});
 
 export default Project;
-
-export const Container = styled.div`
-  display: ${(props) => (props.isDetailView ? "flex" : "grid")};
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  gap: 10px;
-  place-items: center;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  position: relative;
-  background: ${(props) => props.theme.backgroundColor};
-  color: ${(props) => props.theme.fontColor};
-  padding: 0 80px;
-  /* pointer-events: auto; */
-  @media ${(props) => props.theme.desktop} {
-  }
-  @media ${(props) => props.theme.mobile} {
-    padding: 20px 10px;
-    display: flex;
-    flex-direction: column;
-  }
-`;

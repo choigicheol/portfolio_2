@@ -9,6 +9,8 @@ const infiniteArrow = keyframes`
 
 const Container = styled.div`
   display: flex;
+  cursor: pointer;
+  width: 120px;
   span {
     font-size: 20px;
     margin-right: 5px;

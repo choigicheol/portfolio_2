@@ -3,14 +3,9 @@ import styled from "styled-components";
 export const SkillContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  height: 100vh;
-  background: ${(props) => props.theme.backgroundColor};
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+  margin: 0 40px;
   color: ${(props) => props.theme.fontColor};
-  padding: 0 80px;
-  @media ${(props) => props.theme.desktop} {
-  }
-  @media ${(props) => props.theme.mobile} {
-    padding: 0 10px;
-  }
 `;

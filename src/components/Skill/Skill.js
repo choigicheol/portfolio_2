@@ -1,34 +1,30 @@
 import React from "react";
 import { SkillContainer } from "./Skill.style";
 import SetSkills from "../SetSkills/SetSkills";
+import { skills } from "../../data/data";
+import ScrollArrow from "../ScrollArrow/ScrollArrow";
+import {
+  Container,
+  ScrollArrowContainer,
+  LeftTitle,
+} from "../../style/global.style";
 
-function Skill() {
-  const language = [
-    "./images/lang3.png",
-    "./images/lang4.png",
-    "./images/lang1.svg",
-    "./images/lang2.svg",
-  ];
-
-  const frontend = [
-    "./images/front1.png",
-    "./images/front2.svg",
-    "./images/front3.svg",
-    "./images/front4.svg",
-  ];
-
-  const etc = ["./images/etc1.svg", "./images/etc2.svg"];
-
-  const etc2 = ["./images/etc3.png", "./images/etc4.png", "./images/etc5.png"];
-
+const Skill = React.memo(function Skill({ handleScrollToAbout }) {
   return (
-    <SkillContainer>
-      <SetSkills images={language} />
-      <SetSkills images={frontend} />
-      <SetSkills images={etc} />
-      <SetSkills images={etc2} />
-    </SkillContainer>
+    <Container>
+      <LeftTitle>
+        <span>{"SKILL"}</span>
+      </LeftTitle>
+      <SkillContainer>
+        {skills.map((skill) => (
+          <SetSkills images={skill} />
+        ))}
+        <ScrollArrowContainer onClick={() => handleScrollToAbout("Project")}>
+          <ScrollArrow />
+        </ScrollArrowContainer>
+      </SkillContainer>
+    </Container>
   );
-}
+});
 
 export default Skill;

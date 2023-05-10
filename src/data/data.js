@@ -3,11 +3,11 @@ export const data = [
     id: 0,
     title: "AutoRatingAI",
     skills: ["React", "JavaScript", "TypeScript", "Styled-Components", "AWS"],
-    mainScreen: "./images/autoratingai01.png",
+    mainScreen: "./images/autoratingaiMainScreen.webp",
     screens: [
-      "./images/autoratingai01.png",
-      "./images/autoratingai02.png",
-      "./images/autoratingai03.png",
+      "./images/autoratingai01.webp",
+      "./images/autoratingai02.webp",
+      "./images/autoratingai03.webp",
       "./images/autoratingai04.gif",
       "./images/autoratingai05.gif",
       "./images/autoratingai06.gif",
@@ -59,14 +59,14 @@ export const data = [
     id: 1,
     title: "모두의 추천목록",
     skills: ["React-Native", "JavaScript", "Firebase", "Redux-Toolkit"],
-    mainScreen: "./images/moduMainScreen.jpeg",
+    mainScreen: "./images/moduMainScreen.webp",
     screens: [
-      "./images/modu01.jpeg",
-      "./images/modu02.jpeg",
-      "./images/modu03.jpeg",
-      "./images/modu04.jpeg",
-      "./images/modu05.jpeg",
-      "./images/modu06.jpeg",
+      "./images/modu01.webp",
+      "./images/modu02.webp",
+      "./images/modu03.webp",
+      "./images/modu04.webp",
+      "./images/modu05.webp",
+      "./images/modu06.webp",
     ],
     isSelect: false,
     detail: {
@@ -106,13 +106,13 @@ export const data = [
     id: 2,
     title: "열린집",
     skills: ["React", "TypeScript", "Styled-Components", "Redux-Toolkit"],
-    mainScreen: "./images/yeollinMainScreen.png",
+    mainScreen: "./images/yeollinMainScreen.webp",
     screens: [
-      "./images/yeollin-jib01.png",
-      "./images/yeollin-jib02.png",
-      "./images/yeollin-jib03.png",
-      "./images/yeollin-jib04.png",
-      "./images/yeollin-jib05.png",
+      "./images/yeollin-jib01.webp",
+      "./images/yeollin-jib02.webp",
+      "./images/yeollin-jib03.webp",
+      "./images/yeollin-jib04.webp",
+      "./images/yeollin-jib05.webp",
     ],
     isSelect: false,
     detail: {
@@ -156,13 +156,13 @@ export const data = [
     id: 3,
     title: "Weavel",
     skills: ["React", "JavaScript", "Styled-Components"],
-    mainScreen: "./images/weavel01.png",
+    mainScreen: "./images/weavelMainScreen.webp",
     screens: [
-      "./images/weavel01.png",
-      "./images/weavel02.png",
-      "./images/weavel03.png",
-      "./images/weavel04.png",
-      "./images/weavel05.png",
+      "./images/weavel01.webp",
+      "./images/weavel02.webp",
+      "./images/weavel03.webp",
+      "./images/weavel04.webp",
+      "./images/weavel05.webp",
     ],
     isSelect: false,
     detail: {
@@ -185,6 +185,26 @@ export const data = [
       ],
     },
   },
+];
+
+export const skills = [
+  [
+    "./images/lang3.webp",
+    "./images/lang4.webp",
+    "./images/lang1.svg",
+    "./images/lang2.svg",
+  ],
+
+  [
+    "./images/front1.webp",
+    "./images/front2.svg",
+    "./images/front3.svg",
+    "./images/front4.svg",
+  ],
+
+  ["./images/etc1.svg", "./images/etc2.svg"],
+
+  ["./images/etc3.webp", "./images/etc4.webp", "./images/etc5.webp"],
 ];
 
 export const railSkill = new Array(25).fill("SKILL");

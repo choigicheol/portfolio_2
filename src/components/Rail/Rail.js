@@ -28,12 +28,12 @@ export const Container = styled.div`
   }
 `;
 
-function Rail({ dir, words, page }) {
+const Rail = React.memo(function Rail({ dir, words, page }) {
   const [scrollY, setScrollY] = useState(0);
   const handleScroll = () => {
-    requestAnimationFrame(() => {
-      setScrollY(window.scrollY);
-    });
+    // requestAnimationFrame(() => {
+    setScrollY(window.scrollY);
+    // });
   };
 
   useEffect(() => {
@@ -68,6 +68,6 @@ function Rail({ dir, words, page }) {
       </Container>
     </div>
   );
-}
+});
 
 export default Rail;

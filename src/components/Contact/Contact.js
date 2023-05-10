@@ -1,43 +1,6 @@
 import React from "react";
-import styled from "styled-components";
-import { FlexBox } from "../../style/global.style";
+import { Container, ContactBox, ImageDiv } from "./Contact.style";
 import Bounce from "react-reveal/Bounce";
-
-const Container = styled(FlexBox)`
-  height: 200px;
-  justify-content: center;
-  background: ${(props) => props.theme.backgroundColor};
-  color: ${(props) => props.theme.fontColor};
-  padding: 0 80px;
-  @media ${(props) => props.theme.desktop} {
-  }
-  @media ${(props) => props.theme.mobile} {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0 10px;
-  }
-`;
-
-const ContactBox = styled(FlexBox)`
-  align-items: center;
-  justify-content: center;
-  margin: 20px;
-  span {
-    font-size: 20px;
-    margin-left: 10px;
-  }
-`;
-
-const ImageDiv = styled.div`
-  width: 50px;
-  height: 50px;
-  border-radius: 5px;
-  background-image: ${(props) => `url(${props.path})`};
-  background-position: top;
-  background-size: cover;
-  box-sizing: border-box;
-  cursor: pointer;
-`;
 
 const contacts = [
   {
@@ -62,7 +25,7 @@ const contacts = [
   },
 ];
 
-function Contact() {
+const Contact = React.memo(function Contact() {
   return (
     <Container>
       {contacts.map((contact, idx) => (
@@ -77,6 +40,6 @@ function Contact() {
       ))}
     </Container>
   );
-}
+});
 
 export default Contact;
