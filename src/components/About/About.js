@@ -1,62 +1,71 @@
-import {
-  AboutContainer,
-  Wrapper,
-  Wrapper2,
-  AboutText,
-  Bar,
-  AboutMe,
-} from "./About.style";
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect, lazy, Suspense } from "react";
+import { AboutContainer } from "./About.style";
 import Fade from "react-reveal/Fade";
 import ScrollArrow from "../ScrollArrow/ScrollArrow";
+import {
+  Container,
+  ScrollArrowContainer,
+  LeftTitle,
+} from "../../style/global.style";
 
-function About() {
-  const [isMount, setIsMount] = useState(false);
-  const [isShowAbout, setIsShowAbout] = useState(false);
+const LazyTerminal = lazy(() => import("../Terminal/Terminal"));
 
-  const aboutText = [
-    ["F", "R", "O", "N", "T"],
-    ["E", "N", "D"],
-    ["D", "E", "V", "E", "L", "O", "P", "E", "R"],
-  ];
+const About = React.memo(function About({ handleScrollToAbout }) {
+  const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
-    console.log("render");
-    setIsMount(true);
-    setTimeout(() => {
-      setIsShowAbout(true);
-    }, 1000);
+    function handleScroll() {
+      const scrollPosition =
+        (window.scrollY /
+          (document.documentElement.scrollHeight - window.innerHeight)) *
+        100;
+      setScrollY(scrollPosition);
+    }
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   return (
-    <AboutContainer>
-      <Wrapper>
-        <div>
-          <AboutText>{"FRONT"}</AboutText>
-        </div>
-        <Bar isMount={isMount} />
-        <div>
-          <AboutText>{"END"}</AboutText>
-        </div>
-      </Wrapper>
-      <Wrapper2>
-        <div>
-          <AboutText>{"DEVELOPER"}</AboutText>
-        </div>
-        {isShowAbout && (
-          <Fade>
-            <AboutMe>
-              <p>
-                안녕하세요 재밌는 기능 만드는걸 좋아하고 인간관계를 중요시하는
-                Front-end 개발자 최기철입니다.
-              </p>
-              <ScrollArrow />
-            </AboutMe>
-          </Fade>
-        )}
-      </Wrapper2>
-    </AboutContainer>
+    <Container>
+      <LeftTitle>
+        <span>{"About"}</span>
+      </LeftTitle>
+      <AboutContainer>
+        <Suspense>
+          <div
+            style={{
+              width: "100%",
+              height: "100%",
+            }}
+          >
+            {scrollY > 18 ? (
+              <Fade>
+                <div
+                  style={{
+                    display: "flex",
+                    width: "100%",
+                    height: "100%",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <LazyTerminal />
+                </div>
+              </Fade>
+            ) : (
+              <></>
+            )}
+          </div>
+        </Suspense>
+        <ScrollArrowContainer onClick={() => handleScrollToAbout("Skill")}>
+          <ScrollArrow />
+        </ScrollArrowContainer>
+      </AboutContainer>
+    </Container>
   );
-}
+});
 
 export default About;

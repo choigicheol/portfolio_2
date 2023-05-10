@@ -1,65 +1,77 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import "./App.css";
 import { ThemeProvider } from "styled-components";
 import theme from "./style/global.style";
-import About from "./components/About/About";
+import Main from "./components/Main/Main";
 import Skill from "./components/Skill/Skill";
-import Rail from "./components/Rail/Rail";
 import Project from "./components/Project/Project";
 import Contact from "./components/Contact/Contact";
-import { railSkill, railProject, railContact } from "./data/data";
-import { motion, useScroll } from "framer-motion";
 import CursorCircle from "./components/CursorCircle/CursorCircle";
-import styled from "styled-components";
-import { throttle } from "lodash";
+import _ from "lodash";
+import About from "./components/About/About";
 
 function App() {
-  const { scrollYProgress } = useScroll();
+  // const { scrollYProgress } = useScroll();
   const [position, setPosition] = useState({ x: 0, y: 0 });
-  const handleMouseMove = throttle((e) => {
-    setPosition({ x: e.clientX, y: e.clientY });
-  }, 100);
+
+  useEffect(() => {
+    function handleMouseMove(e) {
+      setPosition({ x: e.clientX, y: e.clientY });
+    }
+
+    const throttledMouseMove = _.throttle(handleMouseMove, 100);
+
+    window.addEventListener("mousemove", throttledMouseMove);
+
+    return () => {
+      window.removeEventListener("mousemove", throttledMouseMove);
+    };
+  }, []);
+
+  const aboutRef = useRef(null);
+  const skillRef = useRef(null);
+  const projectRef = useRef(null);
+
+  const handleScrollToAbout = useCallback((target) => {
+    if (target === "About") {
+      aboutRef.current.scrollIntoView({ behavior: "smooth" });
+    } else if (target === "Skill") {
+      skillRef.current.scrollIntoView({ behavior: "smooth" });
+    } else projectRef.current.scrollIntoView({ behavior: "smooth" });
+  }, []);
+
   return (
     <ThemeProvider theme={theme}>
+      <Main handleScrollToAbout={handleScrollToAbout} />
       <div
-        onMouseMove={(e) => handleMouseMove(e)}
         style={{
-          position: "relative",
+          display: "flex",
+          flexDirection: "column",
           width: "100%",
-          height: "100%",
+          alignItems: "center",
         }}
       >
-        <motion.div
-          className="progress-bar"
-          style={{ scaleX: scrollYProgress }}
-        />
-
-        <About />
-        <Rail dir={"forward"} words={railSkill} page={0} />
-        <Skill />
-        <Rail dir={"reverse"} words={railProject} page={1} />
-        <Project />
-        <Rail dir={"forward"} words={railContact} page={2} />
+        <div
+          style={{
+            maxWidth: "1400px",
+            width: "100%",
+          }}
+        >
+          <div ref={aboutRef}></div>
+          <About handleScrollToAbout={handleScrollToAbout} />
+          {/* <Rail dir={"forward"} words={railSkill} page={0} /> */}
+          <div ref={skillRef}></div>
+          <Skill handleScrollToAbout={handleScrollToAbout} />
+          {/* <Rail dir={"reverse"} words={railProject} page={1} /> */}
+          <div ref={projectRef}></div>
+          <Project handleScrollToAbout={handleScrollToAbout} />
+          {/* <Rail dir={"forward"} words={railContact} page={2} /> */}
+          <CursorCircle x={position.x} y={position.y} />
+        </div>
         <Contact />
-        <CursorCircle x={position.x} y={position.y} />
-        {/* <Pointer x={position.x} y={position.y} /> */}
       </div>
     </ThemeProvider>
   );
 }
 
 export default App;
-
-export const Pointer = styled.div`
-  position: fixed;
-  background-color: rgb(0, 255, 255, 0.9);
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  left: ${(props) => props.x - 22}px;
-  top: ${(props) => props.y - 22}px;
-  transition: all 0.5s ease-out;
-  mix-blend-mode: difference;
-  /* z-index: 99999; */
-  pointer-events: none;
-`;
