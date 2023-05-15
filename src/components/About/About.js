@@ -11,15 +11,14 @@ import {
 const LazyTerminal = lazy(() => import("../Terminal/Terminal"));
 
 const About = React.memo(function About({ handleScrollToAbout }) {
-  const [scrollY, setScrollY] = useState(0);
-
+  const [isView, setIsView] = useState(false);
   useEffect(() => {
     function handleScroll() {
       const scrollPosition =
         (window.scrollY /
           (document.documentElement.scrollHeight - window.innerHeight)) *
         100;
-      setScrollY(scrollPosition);
+      if (scrollPosition > 18) setIsView(true);
     }
     window.addEventListener("scroll", handleScroll);
 
@@ -41,7 +40,7 @@ const About = React.memo(function About({ handleScrollToAbout }) {
               height: "100%",
             }}
           >
-            {scrollY > 18 ? (
+            {isView ? (
               <Fade>
                 <div
                   style={{

@@ -5,7 +5,6 @@ function useTypingEffect(text, delay) {
 
   useEffect(() => {
     let currentIndex = 0;
-
     const intervalId = setInterval(() => {
       const currentLetter = text[currentIndex];
       setTypedText((prevTypedText) => prevTypedText + currentLetter);

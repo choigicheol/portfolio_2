@@ -8,6 +8,9 @@ export const AboutContainer = styled.div`
   width: 100%;
   height: 100%;
   margin: 0 40px;
+  @media ${(props) => props.theme.mobile} {
+    margin: 0;
+  }
   /* background: rgb(13, 13, 14); */
   /* background: rgb(75, 99, 139, 0.4); */
 `;
