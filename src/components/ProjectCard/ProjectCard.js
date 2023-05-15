@@ -3,7 +3,7 @@ import React, { useState, Suspense, lazy } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./ProjectCard.css";
-// import ProjectDetail from "../ProjectDetail/ProjectDetail";
+import ProjectDetail from "../ProjectDetail/ProjectDetail";
 import {
   Container,
   ImgDiv,
@@ -48,32 +48,33 @@ function ProjectCard({
     >
       {isDetailView ? (
         // project detail
-        <Suspense fallback={null}>
-          <DetailView>
-            <CloseButtonArea>
-              <CloseButton
-                onClick={(e) => {
-                  handleCloseDetailView(e);
-                  setIsOver(false);
-                }}
-              >
-                <img
-                  src="./images/closeIcon.webp"
-                  style={{ height: "30px" }}
-                  alt="close"
-                />
-              </CloseButton>
-            </CloseButtonArea>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                flexDirection: "column",
-                padding: "20px 0",
+
+        <DetailView>
+          <CloseButtonArea>
+            <CloseButton
+              onClick={(e) => {
+                handleCloseDetailView(e);
+                setIsOver(false);
               }}
             >
-              {/* project 설명 */}
+              <img
+                src="./images/closeIcon.webp"
+                style={{ height: "30px" }}
+                alt="close"
+              />
+            </CloseButton>
+          </CloseButtonArea>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              flexDirection: "column",
+              padding: "20px 0",
+            }}
+          >
+            {/* project 설명 */}
+            <Suspense fallback={null}>
               <LazyDetail props={detail} />
 
               {/* carousel */}
@@ -82,9 +83,9 @@ function ProjectCard({
                   <SlideImage key={idx} url={screen} />
                 ))}
               </LazySlider>
-            </div>
-          </DetailView>
-        </Suspense>
+            </Suspense>
+          </div>
+        </DetailView>
       ) : (
         // project card
         <>

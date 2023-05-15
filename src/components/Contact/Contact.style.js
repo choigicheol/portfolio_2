@@ -9,6 +9,7 @@ export const Container = styled(FlexBox)`
   color: rgba(13, 13, 14);
   padding: 10px 80px;
   flex-wrap: wrap;
+  box-sizing: border-box;
   @media ${(props) => props.theme.desktop} {
   }
   @media ${(props) => props.theme.mobile} {

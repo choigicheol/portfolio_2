@@ -46,7 +46,7 @@ export const CenterContainer = styled(FlexBox)`
 
 export const CursorPointer = styled.span`
   display: inline-block;
-  height: 100%;
+  height: 30px;
   width: 9px;
   background: #ffffff;
   color: #ffffff;
@@ -65,6 +65,8 @@ export const LeftTitle = styled.div`
   align-items: center;
   justify-content: center;
   span {
+    width: 80px;
+    text-align: center;
     color: #ffffff;
     font-family: Oswald-bold;
     writing-mode: vertical-lr;
@@ -84,7 +86,6 @@ export const LeftTitle = styled.div`
 
 export const Container = styled.div`
   display: flex;
-  /* flex-direction: column; */
   height: 100vh;
   width: 100%;
   color: ${(props) => props.theme.fontColor};

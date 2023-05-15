@@ -12,11 +12,12 @@ export const ProjectContainer = styled.div`
   height: 100%;
   margin: 0 40px;
   position: relative;
+  box-sizing: border-box;
   /* pointer-events: auto; */
   @media ${(props) => props.theme.desktop} {
   }
   @media ${(props) => props.theme.mobile} {
-    padding: 20px 10px;
+    margin: 0;
     display: flex;
     flex-direction: column;
   }

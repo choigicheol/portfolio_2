@@ -8,4 +8,7 @@ export const SkillContainer = styled.div`
   width: 100%;
   margin: 0 40px;
   color: ${(props) => props.theme.fontColor};
+  @media ${(props) => props.theme.mobile} {
+    margin: 0;
+  }
 `;
