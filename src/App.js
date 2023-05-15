@@ -11,7 +11,6 @@ import _ from "lodash";
 import About from "./components/About/About";
 
 function App() {
-  // const { scrollYProgress } = useScroll();
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
