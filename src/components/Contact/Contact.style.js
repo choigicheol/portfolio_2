@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { FlexBox } from "../../style/global.style";
 
-export const Container = styled(FlexBox)`
+export const Container = styled.div`
+  display: flex;
   min-height: 40px;
   width: 100%;
   justify-content: center;
@@ -17,7 +17,8 @@ export const Container = styled(FlexBox)`
   }
 `;
 
-export const ContactBox = styled(FlexBox)`
+export const ContactBox = styled.div`
+  display: flex;
   align-items: center;
   justify-content: center;
   margin: 20px;

@@ -89,12 +89,23 @@ export const Container = styled.div`
   height: 100vh;
   width: 100%;
   color: ${(props) => props.theme.fontColor};
-  background: ${(props) => props.theme.backgroundColor};
   padding: 40px 80px;
   box-sizing: border-box;
   @media ${(props) => props.theme.desktop} {
   }
   @media ${(props) => props.theme.mobile} {
     padding: 20px 10px;
+  }
+`;
+
+export const ContentBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  margin: 0 40px;
+  @media ${(props) => props.theme.mobile} {
+    margin: 0;
   }
 `;

@@ -24,10 +24,7 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const Wrapper2 = styled.div`
-  display: flex;
-  width: 100%;
-  align-items: center;
+export const WrapperBetween = styled(Wrapper)`
   justify-content: space-between;
   @media screen and (max-width: 1100px) {
     flex-direction: column;

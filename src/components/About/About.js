@@ -1,4 +1,4 @@
-import React, { useState, useEffect, lazy, Suspense } from "react";
+import React, { lazy, Suspense } from "react";
 import { AboutContainer } from "./About.style";
 import Fade from "react-reveal/Fade";
 import ScrollArrow from "../ScrollArrow/ScrollArrow";
@@ -10,56 +10,29 @@ import {
 
 const LazyTerminal = lazy(() => import("../Terminal/Terminal"));
 
-const About = React.memo(function About({ handleScrollToAbout }) {
-  const [isView, setIsView] = useState(false);
-  useEffect(() => {
-    function handleScroll() {
-      const scrollPosition =
-        (window.scrollY /
-          (document.documentElement.scrollHeight - window.innerHeight)) *
-        100;
-      if (scrollPosition > 18) setIsView(true);
-    }
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
+const About = React.memo(function About({
+  isShowAbout,
+  handleScrollToRef,
+  forwardRef,
+}) {
   return (
-    <Container>
+    <Container ref={forwardRef}>
       <LeftTitle>
         <span>{"About"}</span>
       </LeftTitle>
       <AboutContainer>
-        <Suspense>
-          <div
-            style={{
-              width: "100%",
-              height: "100%",
-            }}
-          >
-            {isView ? (
-              <Fade>
-                <div
-                  style={{
-                    display: "flex",
-                    width: "100%",
-                    height: "100%",
-                    alignItems: "center",
-                    justifyContent: "center",
-                  }}
-                >
-                  <LazyTerminal />
-                </div>
-              </Fade>
-            ) : (
-              <></>
-            )}
-          </div>
-        </Suspense>
-        <ScrollArrowContainer onClick={() => handleScrollToAbout("Skill")}>
+        {isShowAbout ? (
+          <Fade>
+            <div className="WH100 flexCenter">
+              <Suspense>
+                <LazyTerminal />
+              </Suspense>
+            </div>
+          </Fade>
+        ) : (
+          <div className="WH100" />
+        )}
+        <ScrollArrowContainer onClick={() => handleScrollToRef("Skill")}>
           <ScrollArrow />
         </ScrollArrowContainer>
       </AboutContainer>

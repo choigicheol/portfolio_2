@@ -1,7 +1,7 @@
 import {
   MainContainer,
   Wrapper,
-  Wrapper2,
+  WrapperBetween,
   MainText,
   Bar,
   ScrollArea,
@@ -10,7 +10,7 @@ import React, { useEffect, useState, useRef } from "react";
 import Fade from "react-reveal/Fade";
 import ScrollArrow from "../ScrollArrow/ScrollArrow";
 
-const Main = React.memo(function Main({ handleScrollToAbout }) {
+const Main = React.memo(function Main({ handleScrollToRef }) {
   const [isMount, setIsMount] = useState(false);
   const [isShowMain, setIsShowMain] = useState(false);
   const [transitionDuration, setTransitionDuration] = useState(0);
@@ -19,15 +19,6 @@ const Main = React.memo(function Main({ handleScrollToAbout }) {
   useEffect(() => {
     const { width } = ref.current.getBoundingClientRect();
     setTransitionDuration(4800 / width);
-  }, []);
-
-  const mainText = [
-    ["F", "R", "O", "N", "T"],
-    ["E", "N", "D"],
-    ["D", "E", "V", "E", "L", "O", "P", "E", "R"],
-  ];
-
-  useEffect(() => {
     setTimeout(() => {
       setIsMount(true);
     }, 500);
@@ -48,17 +39,16 @@ const Main = React.memo(function Main({ handleScrollToAbout }) {
         <Bar isMount={isMount} transitionDuration={transitionDuration} />
         <MainText>{"END"}</MainText>
       </Wrapper>
-      <Wrapper2>
+      <WrapperBetween>
         <MainText>{"DEVELOPER"}</MainText>
         {isShowMain && (
-          <ScrollArea onClick={() => handleScrollToAbout("About")}>
+          <ScrollArea onClick={() => handleScrollToRef("About")}>
             <Fade>
-              <div></div>
               <ScrollArrow />
             </Fade>
           </ScrollArea>
         )}
-      </Wrapper2>
+      </WrapperBetween>
     </MainContainer>
   );
 });

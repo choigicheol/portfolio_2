@@ -12,18 +12,34 @@ import About from "./components/About/About";
 
 function App() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [isShowAbout, setIsShowAbout] = useState(false);
 
   useEffect(() => {
     function handleMouseMove(e) {
       setPosition({ x: e.clientX, y: e.clientY });
     }
 
+    function handleScroll() {
+      const scrollPosition =
+        (window.scrollY /
+          (document.documentElement.scrollHeight - window.innerHeight)) *
+        100;
+      if (scrollPosition > 18) {
+        setTimeout(() => {
+          setIsShowAbout(true);
+        }, 500);
+      }
+    }
+
     const throttledMouseMove = _.throttle(handleMouseMove, 100);
+    const throttledScroll = _.throttle(handleScroll, 100);
 
     window.addEventListener("mousemove", throttledMouseMove);
+    window.addEventListener("scroll", throttledScroll);
 
     return () => {
       window.removeEventListener("mousemove", throttledMouseMove);
+      window.removeEventListener("scroll", throttledScroll);
     };
   }, []);
 
@@ -31,7 +47,7 @@ function App() {
   const skillRef = useRef(null);
   const projectRef = useRef(null);
 
-  const handleScrollToAbout = useCallback((target) => {
+  const handleScrollToRef = useCallback((target) => {
     if (target === "About") {
       aboutRef.current.scrollIntoView({ behavior: "smooth" });
     } else if (target === "Skill") {
@@ -41,30 +57,16 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Main handleScrollToAbout={handleScrollToAbout} />
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          width: "100%",
-          alignItems: "center",
-        }}
-      >
-        <div
-          style={{
-            maxWidth: "1400px",
-            width: "100%",
-          }}
-        >
-          <div ref={aboutRef}></div>
-          <About handleScrollToAbout={handleScrollToAbout} />
-          {/* <Rail dir={"forward"} words={railSkill} page={0} /> */}
-          <div ref={skillRef}></div>
-          <Skill handleScrollToAbout={handleScrollToAbout} />
-          {/* <Rail dir={"reverse"} words={railProject} page={1} /> */}
-          <div ref={projectRef}></div>
-          <Project handleScrollToAbout={handleScrollToAbout} />
-          {/* <Rail dir={"forward"} words={railContact} page={2} /> */}
+      <Main handleScrollToRef={handleScrollToRef} />
+      <div id="subContainer">
+        <div id="contentMaxWidth">
+          <About
+            forwardRef={aboutRef}
+            isShowAbout={isShowAbout}
+            handleScrollToRef={handleScrollToRef}
+          />
+          <Skill forwardRef={skillRef} handleScrollToRef={handleScrollToRef} />
+          <Project forwardRef={projectRef} />
           <CursorCircle x={position.x} y={position.y} />
         </div>
         <Contact />

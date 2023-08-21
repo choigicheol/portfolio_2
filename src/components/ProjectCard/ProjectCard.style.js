@@ -45,6 +45,24 @@ export const ExplainArea = styled.div`
   box-sizing: border-box;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
+  .explainTitle {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  span {
+    margin-right: 5px;
+  }
+  @media ${(props) => props.theme.desktop} {
+  }
+  @media ${(props) => props.theme.mobile} {
+    height: 60px;
+    .explainTitle {
+      font-size: 16px;
+    }
+    span {
+      font-size: 12px;
+    }
+  }
 `;
 
 export const DetailView = styled.div`
@@ -61,6 +79,14 @@ export const DetailView = styled.div`
   }
 `;
 
+export const ContentBox = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px 0;
+`;
+
 export const SlideImage = styled.div`
   height: 500px;
   background-position: top;
@@ -75,6 +101,9 @@ export const CloseButton = styled.span`
   font-weight: bold;
   padding-right: 10px;
   cursor: pointer;
+  .W30 {
+    width: 30px;
+  }
 `;
 
 export const CloseButtonArea = styled.div`

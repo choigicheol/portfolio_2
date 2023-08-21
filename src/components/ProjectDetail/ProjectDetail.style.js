@@ -32,9 +32,9 @@ export const MiddleContainer = styled(FlexBox)`
 `;
 
 export const MiddleLinkBox = styled(FlexBox)`
-  flex: 1;
+  width: 100%;
   padding: 20px 0;
-  flex-direction: column;
+  box-sizing: border-box;
   span {
     font-weight: bold;
   }
@@ -42,22 +42,25 @@ export const MiddleLinkBox = styled(FlexBox)`
   div {
     padding: 5px 0;
     font-size: 16px;
+    margin-right: 20px;
   }
   @media ${(props) => props.theme.desktop} {
   }
   @media ${(props) => props.theme.mobile} {
     padding: 10px 0;
+    font-size: 12px;
   }
 `;
 
 export const MiddleLink = styled.a`
-  margin-right: 20px;
-  font-size: 14px;
+  font-size: 16px;
+  width: 100px;
   color: white;
+
   @media ${(props) => props.theme.desktop} {
   }
   @media ${(props) => props.theme.mobile} {
-    font-size: 16px;
+    font-size: 12px;
   }
 `;
 

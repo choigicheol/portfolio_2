@@ -13,10 +13,10 @@ export const Container = styled.div`
 `;
 
 export const Top = styled.div`
-  padding: 10px;
+  padding: 0.625rem;
   display: flex;
   width: 100%;
-  height: 45px;
+  height: 2.813rem;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #000000;
@@ -56,6 +56,7 @@ export const TerminalContent = styled.div`
   box-sizing: border-box;
   overflow-y: scroll;
   overflow-x: scroll;
+  cursor: text;
 `;
 
 export const TerminalBase = styled.div`
@@ -63,7 +64,8 @@ export const TerminalBase = styled.div`
   align-items: center;
   width: 100%;
   min-height: 30px;
-
+  box-sizing: border-box;
+  font-size: 18px;
   img {
     height: 20px;
     width: 18px;
@@ -85,4 +87,25 @@ export const DirName = styled.span`
   color: rgb(73, 224, 244);
   font-size: 25px;
   margin-right: 10px;
+`;
+
+export const CommandLsView = styled.div`
+  display: flex;
+  width: 100%;
+`;
+
+export const DirectoryList = styled.div`
+  color: #87cefa;
+  font-size: 18px;
+  margin-right: 30px;
+`;
+
+export const SelectListView = styled.div`
+  color: ${(props) =>
+    props.selectDirNum === props.num ? "#2e2e2e" : "tomato"};
+  font-size: 18px;
+  background: ${(props) =>
+    props.selectDirNum === props.num ? "#ffffff" : "none"};
+  cursor: pointer;
+  margin-right: 30px;
 `;

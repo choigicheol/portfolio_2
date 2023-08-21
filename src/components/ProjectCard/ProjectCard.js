@@ -1,14 +1,13 @@
 import React, { useState, Suspense, lazy } from "react";
-// import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./ProjectCard.css";
-import ProjectDetail from "../ProjectDetail/ProjectDetail";
 import {
   Container,
   ImgDiv,
   ExplainArea,
   DetailView,
+  ContentBox,
   SlideImage,
   CloseButton,
   CloseButtonArea,
@@ -48,7 +47,6 @@ function ProjectCard({
     >
       {isDetailView ? (
         // project detail
-
         <DetailView>
           <CloseButtonArea>
             <CloseButton
@@ -57,22 +55,10 @@ function ProjectCard({
                 setIsOver(false);
               }}
             >
-              <img
-                src="./images/closeIcon.webp"
-                style={{ height: "30px" }}
-                alt="close"
-              />
+              <img src="./images/closeIcon.webp" className="W30" alt="close" />
             </CloseButton>
           </CloseButtonArea>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              flexDirection: "column",
-              padding: "20px 0",
-            }}
-          >
+          <ContentBox>
             {/* project 설명 */}
             <Suspense fallback={null}>
               <LazyDetail props={detail} />
@@ -84,21 +70,17 @@ function ProjectCard({
                 ))}
               </LazySlider>
             </Suspense>
-          </div>
+          </ContentBox>
         </DetailView>
       ) : (
         // project card
         <>
           <ImgDiv mainScreen={mainScreen} />
           <ExplainArea isOver={isOver}>
-            <div style={{ fontSize: "20px", fontWeight: "bold" }}>{title}</div>
+            <div className="explainTitle">{title}</div>
             <div>
               {skills.map((skill, idx) => {
-                return (
-                  <span key={idx} style={{ marginRight: "5px" }}>
-                    {skill}
-                  </span>
-                );
+                return <span key={idx}>{skill}</span>;
               })}
             </div>
           </ExplainArea>

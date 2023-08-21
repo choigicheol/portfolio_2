@@ -13,13 +13,14 @@
   font-display: block;
 }
 
-.progress-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 10px;
-  background: rgba(255, 139, 118, 0.737);
-  transform-origin: 0%;
-  z-index : 999999;
+#subContainer{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+#contentMaxWidth {
+  max-width: 1400px;
+  width: 100%;
 }

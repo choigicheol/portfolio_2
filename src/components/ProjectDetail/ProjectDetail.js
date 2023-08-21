@@ -18,16 +18,16 @@ function ProjectDetail({ props }) {
         <MiddleLinkBox>
           {!!props.deploy && (
             <div>
-              <span>Deploy : </span>
+              {"Deploy : "}
               <MiddleLink href={props.deploy} target="_blank">
-                {props.deploy}
+                {"링크"}
               </MiddleLink>
             </div>
           )}
           <div>
-            <span>Github : </span>
+            {"Github : "}
             <MiddleLink href={props.github} target="_blank">
-              {props.github}
+              {"링크"}
             </MiddleLink>
           </div>
         </MiddleLinkBox>
@@ -47,9 +47,14 @@ function ProjectDetail({ props }) {
         <ColumnContainer>
           <div>blog</div>
           <ul>
-            {props.blog.map((blog) => (
-              <li>
-                <a href={blog.url} target="_blank" style={{ color: "white" }}>
+            {props.blog.map((blog, idx) => (
+              <li key={idx}>
+                <a
+                  href={blog.url}
+                  target="_blank"
+                  style={{ color: "white" }}
+                  rel="noreferrer noopener"
+                >
                   {blog.title}
                 </a>
               </li>

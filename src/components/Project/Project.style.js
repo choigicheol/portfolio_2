@@ -13,7 +13,6 @@ export const ProjectContainer = styled.div`
   margin: 0 40px;
   position: relative;
   box-sizing: border-box;
-  /* pointer-events: auto; */
   @media ${(props) => props.theme.desktop} {
   }
   @media ${(props) => props.theme.mobile} {

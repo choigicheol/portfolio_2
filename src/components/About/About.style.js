@@ -1,16 +1,14 @@
 import styled from "styled-components";
+import { ContentBox } from "../../style/global.style";
 
-export const AboutContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  margin: 0 40px;
-  @media ${(props) => props.theme.mobile} {
-    margin: 0;
+export const AboutContainer = styled(ContentBox)`
+  .WH100 {
+    width: 100%;
+    height: 100%;
   }
-  /* background: rgb(13, 13, 14); */
-  /* background: rgb(75, 99, 139, 0.4); */
+  .flexCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 `;

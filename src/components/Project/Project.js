@@ -4,7 +4,7 @@ import { data } from "../../data/data";
 import { ProjectContainer } from "./Project.style";
 import { Container, LeftTitle } from "../../style/global.style";
 
-const Project = React.memo(function Project() {
+const Project = React.memo(function Project({ forwardRef }) {
   const [projects, setProjects] = useState(data);
   const [isDetailView, setIsDetailView] = useState(false);
 
@@ -26,7 +26,7 @@ const Project = React.memo(function Project() {
   };
 
   return (
-    <Container>
+    <Container ref={forwardRef}>
       <LeftTitle>
         <span>{"PROJECT"}</span>
       </LeftTitle>
@@ -36,16 +36,16 @@ const Project = React.memo(function Project() {
             project;
           return (
             <ProjectCard
-              screens={screens}
               key={idx}
-              id={id}
               title={title}
               skills={skills}
               mainScreen={mainScreen}
-              handleDetailView={handleDetailView}
+              screens={screens}
+              id={id}
               isSelect={isSelect}
-              isDetailView={isDetailView}
               detail={detail}
+              handleDetailView={handleDetailView}
+              isDetailView={isDetailView}
               handleCloseDetailView={handleCloseDetailView}
             />
           );
