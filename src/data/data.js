@@ -1,9 +1,71 @@
 export const data = [
   {
     id: 0,
+    title: "프라시아로",
+    skills: ["React", "Next.js", "TypeScript", "firebase"],
+    mainScreen: "./images/prasiaroMainScreen.png",
+    screens: [
+      "./images/prasiaro01.webp",
+      "./images/prasiaro02.webp",
+      "./images/prasiaro03.webp",
+      "./images/prasiaro04.webp",
+      "./images/prasiaro05.webp",
+    ],
+    isSelect: false,
+    detail: {
+      title: "(개인) 게임 정보 공유 및 편의기능 제공 사이트",
+      deploy: "https://prasia-ro.vercel.app",
+      github: "https://github.com/choigicheol/prasia-ro",
+      skills: "React, Next.js, TypeScript, firebase",
+      work: [
+        "전체 UI 디자인",
+        "next13 app directory 적용",
+        "markdown file 로드하여 post 페이지 적용",
+      ],
+      blog: [
+        {
+          title:
+            "React에서 더 쉽게 kakao-maps-sdk 사용하기 - 검색기능을 개선해보자",
+          url: "https://velog.io/@g_c0916/React%EC%97%90%EC%84%9C-%EB%8D%94-%EC%89%BD%EA%B2%8C-kakao-maps-sdk-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0-keyword-category-%EA%B2%80%EC%83%89-%EA%B0%9C%EC%84%A0%ED%95%98%EA%B8%B0",
+        },
+      ],
+      Retrospective: [],
+    },
+  },
+  {
+    id: 1,
+    title: "로또번호 랜덤생성기",
+    skills: ["React", "Next.js", "TypeScript", "firebase"],
+    mainScreen: "./images/randomnumMainScreen.png",
+    screens: [
+      "./images/randomnum01.webp",
+      "./images/randomnum02.webp",
+      "./images/randomnum03.webp",
+      "./images/randomnum04.webp",
+    ],
+    isSelect: false,
+    detail: {
+      title:
+        "(개인) 로또번호 추천제외기능 및 당첨내역검색, 번호별 등장 횟수 검색 기능 제공 사이트",
+      deploy: "https://random-num.vercel.app",
+      github: "https://github.com/choigicheol/RandomNum",
+      skills: "React, Next.js, TypeScript, Styled-components, AWS",
+      work: ["전체 UI 디자인", "next12 pages directory 적용"],
+      blog: [
+        {
+          title:
+            "React에서 더 쉽게 kakao-maps-sdk 사용하기 - 검색기능을 개선해보자",
+          url: "https://velog.io/@g_c0916/React%EC%97%90%EC%84%9C-%EB%8D%94-%EC%89%BD%EA%B2%8C-kakao-maps-sdk-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0-keyword-category-%EA%B2%80%EC%83%89-%EA%B0%9C%EC%84%A0%ED%95%98%EA%B8%B0",
+        },
+      ],
+      Retrospective: [],
+    },
+  },
+  {
+    id: 2,
     title: "AutoRatingAI",
     skills: ["React", "JavaScript", "TypeScript", "Styled-Components", "AWS"],
-    mainScreen: "./images/autoratingaiMainScreen.webp",
+    mainScreen: "./images/autoratingaiMainScreen.png",
     screens: [
       "./images/autoratingai01.webp",
       "./images/autoratingai02.webp",
@@ -57,7 +119,7 @@ export const data = [
     },
   },
   {
-    id: 1,
+    id: 3,
     title: "모두의 추천목록",
     skills: ["React-Native", "JavaScript", "Firebase", "Redux-Toolkit"],
     mainScreen: "./images/moduMainScreen.webp",
@@ -104,7 +166,7 @@ export const data = [
     },
   },
   {
-    id: 2,
+    id: 4,
     title: "열린집",
     skills: ["React", "TypeScript", "Styled-Components", "Redux-Toolkit"],
     mainScreen: "./images/yeollinMainScreen.webp",
@@ -154,7 +216,7 @@ export const data = [
     },
   },
   {
-    id: 3,
+    id: 5,
     title: "Weavel",
     skills: ["React", "JavaScript", "Styled-Components"],
     mainScreen: "./images/weavelMainScreen.webp",
