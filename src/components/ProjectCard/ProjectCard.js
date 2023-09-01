@@ -23,7 +23,7 @@ function ProjectCard({
   screens,
   id,
   handleDetailView,
-  isSelect,
+  isSelectCard,
   isDetailView,
   detail,
   handleCloseDetailView,
@@ -40,7 +40,7 @@ function ProjectCard({
   return (
     <Container
       isDetailView={isDetailView}
-      isSelect={isSelect}
+      isSelectCard={isSelectCard}
       onMouseOver={() => setIsOver(true)}
       onMouseLeave={() => setIsOver(false)}
       onClick={() => handleDetailView(id)}

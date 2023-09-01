@@ -2,7 +2,7 @@ export const data = [
   {
     id: 0,
     title: "프라시아로",
-    skills: ["React", "Next.js", "TypeScript", "firebase"],
+    skills: ["Next.js", "TypeScript", "Firebase"],
     mainScreen: "./images/prasiaroMainScreen.png",
     screens: [
       "./images/prasiaro01.webp",
@@ -11,16 +11,17 @@ export const data = [
       "./images/prasiaro04.webp",
       "./images/prasiaro05.webp",
     ],
-    isSelect: false,
     detail: {
       title: "(개인) 게임 정보 공유 및 편의기능 제공 사이트",
       deploy: "https://prasia-ro.vercel.app",
       github: "https://github.com/choigicheol/prasia-ro",
-      skills: "React, Next.js, TypeScript, firebase",
+      skills: "Next.js, TypeScript, Firebase",
       work: [
-        "전체 UI 디자인",
         "next13 app directory 적용",
-        "markdown file 로드하여 post 페이지 적용",
+        "markdown파일기반 post 업데이트",
+        "동적라우팅 페이지 빌드",
+        "이미지 최적화",
+        "",
       ],
       blog: [
         {
@@ -35,7 +36,7 @@ export const data = [
   {
     id: 1,
     title: "로또번호 랜덤생성기",
-    skills: ["React", "Next.js", "TypeScript", "firebase"],
+    skills: ["Next.js", "TypeScript", "Firebase"],
     mainScreen: "./images/randomnumMainScreen.png",
     screens: [
       "./images/randomnum01.webp",
@@ -43,13 +44,12 @@ export const data = [
       "./images/randomnum03.webp",
       "./images/randomnum04.webp",
     ],
-    isSelect: false,
     detail: {
       title:
-        "(개인) 로또번호 추천제외기능 및 당첨내역검색, 번호별 등장 횟수 검색 기능 제공 사이트",
+        "(개인) 로또번호 제외기능 및 당첨내역검색, 번호별 등장 횟수 검색 기능 제공 사이트",
       deploy: "https://random-num.vercel.app",
       github: "https://github.com/choigicheol/RandomNum",
-      skills: "React, Next.js, TypeScript, Styled-components, AWS",
+      skills: "Next.js, TypeScript, Firebase",
       work: ["전체 UI 디자인", "next12 pages directory 적용"],
       blog: [
         {
@@ -74,7 +74,6 @@ export const data = [
       "./images/autoratingai05.gif",
       "./images/autoratingai06.gif",
     ],
-    isSelect: false,
     detail: {
       title:
         "(개인) GPT api로 리뷰의 긍정적, 부정적 문장을 파악해 별점으로 바꿔주는 기능",
@@ -131,7 +130,6 @@ export const data = [
       "./images/modu05.webp",
       "./images/modu06.webp",
     ],
-    isSelect: false,
     detail: {
       title:
         "(개인) 나와 비슷한 영화 취향을 가진 다른유저의 추천목록을 알려주는 앱",
@@ -177,7 +175,6 @@ export const data = [
       "./images/yeollin-jib04.webp",
       "./images/yeollin-jib05.webp",
     ],
-    isSelect: false,
     detail: {
       title:
         "(팀) 이사하면서 버리기 어려운 짐들을 이사 당일 집을 알려주고 나눔하는 서비스",
@@ -227,7 +224,6 @@ export const data = [
       "./images/weavel04.webp",
       "./images/weavel05.webp",
     ],
-    isSelect: false,
     detail: {
       title:
         "(팀) 사용자가 원하는 날씨의 지역을 간단히 시각화해 보여주는 서비스",

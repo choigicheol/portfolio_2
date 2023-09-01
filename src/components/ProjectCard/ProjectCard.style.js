@@ -2,15 +2,17 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: ${(props) =>
-    props.isDetailView ? (props.isSelect ? "flex" : "none") : "flex"};
+    props.isDetailView ? (props.isSelectCard ? "flex" : "none") : "flex"};
   max-width: ${(props) =>
-    props.isDetailView && props.isSelect ? "80%" : "600px"};
+    props.isDetailView && props.isSelectCard ? "80%" : "600px"};
   width: 100%;
   max-height: ${(props) =>
-    props.isDetailView && props.isSelect ? "600px" : "300px"};
+    props.isDetailView && props.isSelectCard ? "600px" : "300px"};
   height: 100%;
   transform: ${(props) =>
-    props.isDetailView && props.isSelect ? "rotateY(360deg)" : "rotateY(0)"};
+    props.isDetailView && props.isSelectCard
+      ? "rotateY(360deg)"
+      : "rotateY(0)"};
   transition: all 0.4s ease;
   cursor: pointer;
   border-radius: 5px;

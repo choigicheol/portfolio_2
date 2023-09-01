@@ -7,11 +7,12 @@ import { Container, LeftTitle } from "../../style/global.style";
 const Project = React.memo(function Project({ forwardRef }) {
   const [projects, setProjects] = useState(data);
   const [isDetailView, setIsDetailView] = useState(false);
+  const [selectCardNum, setSelectCardNum] = useState(null);
 
   const handleDetailView = (id) => {
     setIsDetailView(true);
     const copy = [...projects];
-    copy[id].isSelect = true;
+    setSelectCardNum(id);
     setProjects(copy);
   };
 
@@ -20,7 +21,7 @@ const Project = React.memo(function Project({ forwardRef }) {
     if (isDetailView) {
       setIsDetailView(false);
       const copy = [...data];
-      copy.forEach((el) => (el.isSelect = false));
+      setSelectCardNum(null);
       setProjects(copy);
     }
   };
@@ -32,8 +33,7 @@ const Project = React.memo(function Project({ forwardRef }) {
       </LeftTitle>
       <ProjectContainer isDetailView={isDetailView}>
         {projects.map((project, idx) => {
-          const { title, skills, mainScreen, screens, id, isSelect, detail } =
-            project;
+          const { title, skills, mainScreen, screens, id, detail } = project;
           return (
             <ProjectCard
               key={idx}
@@ -42,7 +42,7 @@ const Project = React.memo(function Project({ forwardRef }) {
               mainScreen={mainScreen}
               screens={screens}
               id={id}
-              isSelect={isSelect}
+              isSelectCard={selectCardNum === id}
               detail={detail}
               handleDetailView={handleDetailView}
               isDetailView={isDetailView}
