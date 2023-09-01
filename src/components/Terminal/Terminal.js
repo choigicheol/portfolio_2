@@ -100,7 +100,7 @@ const Terminal = React.memo(function Terminal() {
             <Button key={idx} color={color} />
           ))}
         </ButtonContainer>
-        <SrcText>CholGiCheol@About/</SrcText>
+        <SrcText>ChoiGiCheol@About/</SrcText>
         <div>⌥⌘1</div>
       </Top>
       {/* 터미널 body */}
