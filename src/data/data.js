@@ -18,16 +18,16 @@ export const data = [
       skills: "Next.js, TypeScript, Firebase",
       work: [
         "next13 app directory 적용",
-        "markdown파일기반 post 업데이트",
+        "markdown 파일기반 post 업데이트",
         "동적라우팅 페이지 빌드",
         "이미지 최적화",
-        "",
+        "페이지 색인생성 후 검색어 노출",
       ],
       blog: [
         {
-          title:
-            "React에서 더 쉽게 kakao-maps-sdk 사용하기 - 검색기능을 개선해보자",
-          url: "https://velog.io/@g_c0916/React%EC%97%90%EC%84%9C-%EB%8D%94-%EC%89%BD%EA%B2%8C-kakao-maps-sdk-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0-keyword-category-%EA%B2%80%EC%83%89-%EA%B0%9C%EC%84%A0%ED%95%98%EA%B8%B0",
+          // title:
+          //   "React에서 더 쉽게 kakao-maps-sdk 사용하기 - 검색기능을 개선해보자",
+          // url: "https://velog.io/@g_c0916/React%EC%97%90%EC%84%9C-%EB%8D%94-%EC%89%BD%EA%B2%8C-kakao-maps-sdk-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0-keyword-category-%EA%B2%80%EC%83%89-%EA%B0%9C%EC%84%A0%ED%95%98%EA%B8%B0",
         },
       ],
       Retrospective: [],
@@ -268,7 +268,7 @@ export const skills = [
 
 export const railSkill = new Array(25).fill("SKILL");
 export const railProject = new Array(25).fill("PROJECT");
-export const railContact = new Array(25).fill("CONTACT"); //  "homepage": "https://choigicheol.github.io/portfolio_2/",
+export const railContact = new Array(25).fill("CONTACT");
 
 export const directoryData = {
   root: {
@@ -354,3 +354,5 @@ export const directoryData = {
     data: null,
   },
 };
+
+// "homepage": "https://choigicheol.github.io/portfolio_2/"
