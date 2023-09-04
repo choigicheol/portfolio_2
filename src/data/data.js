@@ -22,6 +22,7 @@ export const data = [
         "동적라우팅 페이지 빌드",
         "이미지 최적화",
         "페이지 색인생성 후 검색어 노출",
+        "PC 및 Mobile 반응형 CSS",
       ],
       blog: [
         {
@@ -50,7 +51,13 @@ export const data = [
       deploy: "https://random-num.vercel.app",
       github: "https://github.com/choigicheol/RandomNum",
       skills: "Next.js, TypeScript, Firebase",
-      work: ["전체 UI 디자인", "next12 pages directory 적용"],
+      work: [
+        "전체 UI 디자인",
+        "next12 pages directory 적용",
+        "이미지 최적화",
+        "PC 및 Mobile 반응형 CSS",
+        "이전회차번호 Excel파일 로드 후 firebase database 저장",
+      ],
       blog: [
         {
           title:
@@ -89,6 +96,7 @@ export const data = [
         "GPT API 응답을 토대로 자동으로 별점 적용",
         "AWS 클라이언트 및 서버 HTTPS 배포",
         "AWS CodePipeline 배포 자동화",
+        "PC 및 Mobile 반응형 CSS",
       ],
       blog: [
         {
@@ -186,7 +194,7 @@ export const data = [
         "게시글 및 댓글 CRUD 구현",
         "이미지 다중 업로드 및 썸네일 구현",
         "클라이언트 AWS CodePipeline 배포 자동화",
-        "PC 및 Mobile web 반응형 페이지 적용",
+        "PC 및 Mobile 반응형 CSS",
       ],
       blog: [
         {
@@ -235,7 +243,7 @@ export const data = [
         "회원가입 비밀번호 유효성 검사",
         "SVG를 이용한 이미지의 부분 color 변경",
         "ApexChart 라이브러리를 이용한 Line, Bar 그래프 구현",
-        "PC 및 Mobile web 반응형 페이지 적용",
+        "PC 및 Mobile 반응형 CSS",
       ],
       blog: [],
       Retrospective: [
