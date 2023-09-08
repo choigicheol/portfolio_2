@@ -46,24 +46,24 @@ export const data = [
       "./images/randomnum04.webp",
     ],
     detail: {
-      title:
-        "(개인) 로또번호 제외기능 및 당첨내역검색, 번호별 등장 횟수 검색 기능 제공 사이트",
+      title: "(개인) 로또 번호제외기능 및 번호별 등장 횟수 검색 제공 사이트",
       deploy: "https://random-num.vercel.app",
       github: "https://github.com/choigicheol/RandomNum",
       skills: "Next.js, TypeScript, Firebase",
       work: [
         "전체 UI 디자인",
         "next12 pages directory 적용",
+        "Excel data 로드 후 DB 저장",
+        "data 차트화",
         "이미지 최적화",
         "PC 및 Mobile 반응형 CSS",
-        "이전회차번호 Excel파일 로드 후 firebase database 저장",
       ],
       blog: [
-        {
-          title:
-            "React에서 더 쉽게 kakao-maps-sdk 사용하기 - 검색기능을 개선해보자",
-          url: "https://velog.io/@g_c0916/React%EC%97%90%EC%84%9C-%EB%8D%94-%EC%89%BD%EA%B2%8C-kakao-maps-sdk-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0-keyword-category-%EA%B2%80%EC%83%89-%EA%B0%9C%EC%84%A0%ED%95%98%EA%B8%B0",
-        },
+        // {
+        //   title:
+        //     "React에서 더 쉽게 kakao-maps-sdk 사용하기 - 검색기능을 개선해보자",
+        //   url: "https://velog.io/@g_c0916/React%EC%97%90%EC%84%9C-%EB%8D%94-%EC%89%BD%EA%B2%8C-kakao-maps-sdk-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0-keyword-category-%EA%B2%80%EC%83%89-%EA%B0%9C%EC%84%A0%ED%95%98%EA%B8%B0",
+        // },
       ],
       Retrospective: [],
     },
