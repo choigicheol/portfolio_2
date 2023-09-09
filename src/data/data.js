@@ -17,19 +17,19 @@ export const data = [
       github: "https://github.com/choigicheol/prasia-ro",
       skills: "Next.js, TypeScript, Firebase",
       work: [
+        "전체 UI 디자인",
         "next13 app directory 적용",
-        "markdown 파일기반 post 업데이트",
+        "markdown 파일기반 post 빌드",
         "동적라우팅 페이지 빌드",
         "이미지 최적화",
         "페이지 색인생성 후 검색어 노출",
         "PC 및 Mobile 반응형 CSS",
       ],
       blog: [
-        {
-          // title:
-          //   "React에서 더 쉽게 kakao-maps-sdk 사용하기 - 검색기능을 개선해보자",
-          // url: "https://velog.io/@g_c0916/React%EC%97%90%EC%84%9C-%EB%8D%94-%EC%89%BD%EA%B2%8C-kakao-maps-sdk-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0-keyword-category-%EA%B2%80%EC%83%89-%EA%B0%9C%EC%84%A0%ED%95%98%EA%B8%B0",
-        },
+        // {
+        //   title: "",
+        //   url: "",
+        // },
       ],
       Retrospective: [],
     },
@@ -60,9 +60,8 @@ export const data = [
       ],
       blog: [
         // {
-        //   title:
-        //     "React에서 더 쉽게 kakao-maps-sdk 사용하기 - 검색기능을 개선해보자",
-        //   url: "https://velog.io/@g_c0916/React%EC%97%90%EC%84%9C-%EB%8D%94-%EC%89%BD%EA%B2%8C-kakao-maps-sdk-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0-keyword-category-%EA%B2%80%EC%83%89-%EA%B0%9C%EC%84%A0%ED%95%98%EA%B8%B0",
+        //   title: "",
+        //   url: "",
         // },
       ],
       Retrospective: [],
