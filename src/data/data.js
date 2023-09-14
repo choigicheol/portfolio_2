@@ -26,10 +26,10 @@ export const data = [
         "PC 및 Mobile 반응형 CSS",
       ],
       blog: [
-        // {
-        //   title: "",
-        //   url: "",
-        // },
+        {
+          title: "[Next.js] Markdown파일로 post 업데이트 하기",
+          url: "https://velog.io/@g_c0916/Next.js-Markdown%ED%8C%8C%EC%9D%BC%EB%A1%9C-post-%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8-%ED%95%98%EA%B8%B0",
+        },
       ],
       Retrospective: [],
     },
