@@ -59,10 +59,10 @@ export const data = [
         "PC 및 Mobile 반응형 CSS",
       ],
       blog: [
-        // {
-        //   title: "",
-        //   url: "",
-        // },
+        {
+          title: "엑셀(.xlsx) 데이터를 firebase database에 넣기",
+          url: "https://velog.io/@g_c0916/%EC%97%91%EC%85%80.xlsx-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%A5%BC-firebase-database%EC%97%90-%EB%84%A3%EA%B8%B0",
+        },
       ],
       Retrospective: [],
     },
