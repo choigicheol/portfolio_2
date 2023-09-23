@@ -31,7 +31,10 @@ export const data = [
           url: "https://velog.io/@g_c0916/Next.js-Markdown%ED%8C%8C%EC%9D%BC%EB%A1%9C-post-%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8-%ED%95%98%EA%B8%B0",
         },
       ],
-      Retrospective: [],
+      Retrospective: [
+        "이전 토이프로젝트를 보완해 실제 이용자들이 많이 유입될 수 있는 사이트를 만들고자 진행한 게임정보제공 및 편의기능제공 사이트입니다.",
+        "구글 애널리틱스를 이용한 사용자 분석 결과 최근 90일간 2700여명의 사용자가 있었으며 현재 일 평균 10~20여명의 사용자가 방문하고 있습니다.",
+      ],
     },
   },
   {
@@ -64,7 +67,10 @@ export const data = [
           url: "https://velog.io/@g_c0916/%EC%97%91%EC%85%80.xlsx-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%A5%BC-firebase-database%EC%97%90-%EB%84%A3%EA%B8%B0",
         },
       ],
-      Retrospective: [],
+      Retrospective: [
+        "실제 이용자가 있었으면 하는 마음에 평소에 인터넷으로 로또 구매 시 불편했던점을 보완해서 만든 사이트입니다.",
+        "사전검색 미흡으로 비슷한 사이트들이 많아서 이용자 유입도 낮고 주된 컨텐츠가 숫자만 이용하다 보니 검색어 노출에 어려움이 있었습니다",
+      ],
     },
   },
   {
