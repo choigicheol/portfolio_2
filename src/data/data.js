@@ -267,12 +267,9 @@ export const skills = [
     "./images/lang2.svg",
   ],
 
-  [
-    "./images/front1.webp",
-    "./images/front2.svg",
-    "./images/front3.svg",
-    "./images/front4.svg",
-  ],
+  ["./images/front1.webp", "./images/front2.svg", "./images/front3.png"],
+
+  ["./images/front4.svg", "./images/front5.svg"],
 
   ["./images/etc1.svg", "./images/etc2.svg"],
 
